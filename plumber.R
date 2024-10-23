@@ -79,16 +79,17 @@ function() {
 function() {
 
   modelo <- lm(y ~ x + grupo, data = df)
-  
+  anova_tabela <- anova(modelo)
 
   coeficientes <- summary(modelo)$coefficients
-  
+  QME <- anova_tabela["Residuals", "Mean Sq"]
 
   resultado <- list(
     intercepto = coeficientes[1, 1],
     Beta_x = coeficientes[2, 1],
     Beta_grupoB = coeficientes[3, 1],
-    Beta_grupoC = coeficientes[4, 1]
+    Beta_grupoC = coeficientes[4, 1],
+    variância_do_erro = QME
   )
   
 

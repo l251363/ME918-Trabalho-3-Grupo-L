@@ -32,9 +32,9 @@ O banco de dados é armazenado em um arquivo csv.
 
 ### Etapa 1: Rota para registros de novos dados
 
-Com a API rodando e assumindo que o usuário está acessando a rota de alguma forma, para adicionar uma nova observação, como x = 1.5, grupo = A e y = 3, o usuário deve acessar a seguinte url:
+Com a API rodando e assumindo que o usuário está acessando a rota de alguma forma, para adicionar uma nova observação, como x = 1.5, grupo = A e y = 3, o usuário deve acessar a seguinte url (substituindo xxxx pela porta em que o servidor está rodando)
 
-http://127.0.0.1:9031/nova_observacao?x=1.5&grupo=A&y=3.0
+http://127.0.0.1:xxxx/nova_observacao?x=1.5&grupo=A&y=3.0
 
 
 Note que a inclusão de novos registros é nossa única forma de interação com o banco de dados, logo, se inserirmos alguma observação incorretamente, alterações como deleção ou modificação de linhas não poderão ser requisitadas.
@@ -43,21 +43,21 @@ Note que a inclusão de novos registros é nossa única forma de interação com
 
 Tanto para gerar o gráfico de dispersão com a reta de regressão quanto para obter as estimativas dos parâmetros envolvidos na reta de regressão basta executar a rota correspondente, o que seria equivalente a acessar, com a API rodando, as seguintes urls:
 
-1) http://127.0.0.1:9031/grafico
+1) http://127.0.0.1:xxxx/grafico
 
-2) http://127.0.0.1:9031/regressao
+2) http://127.0.0.1:xxxx/regressao
 
 Além disso, o usuário também pode acessar outras 3 rotas nessa etapa para obter informações sobre os resíduos do modelo de regressão e significância estatística dos parâmetros envolvidos, apenas acessando as rotas ou as seguintes urls:
 
-3) http://127.0.0.1:9031/residuos
+3) http://127.0.0.1:xxxx/residuos
 
-4) http://127.0.0.1:9031/graficos_residuos
+4) http://127.0.0.1:xxxx/graficos_residuos
 
-5) http://127.0.0.1:9031/significancia
+5) http://127.0.0.1:xxxx/significancia
 
 ### Etapa 3: Rotas para predição
 
 Para realizar predição do modelo ajustado, o usuário pode utilizar a rota correspondente fornecendo a url abaixo, para o caso x = 2 e grupo B
 
-http://127.0.0.1:9031/predicao?x=2.0&grupo=B
+http://127.0.0.1:xxxx/predicao?x=2.0&grupo=B
 
